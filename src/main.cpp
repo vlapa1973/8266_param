@@ -163,7 +163,7 @@ void mqttCallback(char* topic, byte* payload, unsigned int length) {
   Serial.print("MQTT message arrived [");
   Serial.print(topic);
   Serial.print("] ");
-  for (int i = 0; i < length; i++) {
+  for (uint8_t i = 0; i < length; i++) {
     Serial.print((char)payload[i]);
   }
   Serial.println();
@@ -285,7 +285,7 @@ void setupWiFi() {
 
 String quoteEscape(const String& str) {
   String result = "";
-  int start = 0, pos;
+  uint8_t start = 0, pos;
 
   while (start < str.length()) {
     pos = str.indexOf('"', start);
